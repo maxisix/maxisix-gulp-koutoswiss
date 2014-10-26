@@ -1,16 +1,41 @@
-@import '../../node_modules/kouto-swiss'
+/*
+ * STYLUS KOUTOSWISS SMACSS boilerplate v1.0
+ * Inspired by Jonathan Snook : http://smacss.com
+ * Author: @maxime beaudoin
+ * Date: May 11 2014
+ *
+ * Doc : https://github.com/justinmwatts/SMACSS // http://smacss.com
+ */
 
+
+/* TOOL */
+@import '../../node_modules/kouto-swiss'
+// @import "tool/site-settings";
+
+/* BASE */
 normalize()
 box-sizing-reset()
+@import "base/base";
+// @import "base/form";
 
+/* FONTS */
+//@import "font/...";
 
-body
-    gs( "fluid" )
-    background-image linear-gradient( -45deg, white, red )
-    color white
-    font-family font-stack("Arial")
-    transition 1s all ease-in-out
+/* LAYOUT */
+// @import "layout/grid";
+// @import "layout/header";
+// @import "layout/nav";
+// @import "layout/aside";
+// @import "layout/main";
+// @import "layout/footer";
 
+/* MODULE */
+// @import "module/btn";
+// @import "module/icons";
+// @import "module/animations";
 
-div
-    col(1)
+/* STATE */
+// @import "state/state";
+
+/* THEME */
+// @import "theme/theme";

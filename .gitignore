@@ -1,0 +1,18 @@
+#### Locale ####
+
+.DS_Store
+.DS_Store?
+
+*.log
+node_modules
+*.node
+**/.css
+
+.Trashes
+.trash
+.lastlogin
+
+# ignore log
+error_log
+*.log
+log/*
