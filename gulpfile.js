@@ -25,7 +25,7 @@ FILE DESTINATIONS (RELATIVE TO ASSSETS FOLDER)
 
 var target = {
     main_stylus_src : './assets/stylus/styles.styl',
-    stylus_src : './assets/stylus/**/*.scss',                  // all sass files
+    stylus_src : './assets/stylus/**/*.styl',                  // all sass files
     css_dest : './assets/css',                          // where to put minified css
     js_src : './assets/js/*.js',                        // all js files
     js_dest : './assets/js/min',                        // where to put minified js
@@ -51,7 +51,8 @@ gulp.task('styles', function() {
           use: koutoSwiss(),
           compress: false
         }))
-        .pipe(gulp.dest(target.css_dest));
+        .pipe(gulp.dest(target.css_dest))
+        .pipe(notify('Styles task completed'));;
 });
 
 
