@@ -5,7 +5,16 @@ DEPENDENCIES
 var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     koutoSwiss = require( "kouto-swiss" ),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    jshint = require('gulp-jshint'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    notify = require('gulp-notify'),
+    stylish = require('jshint-stylish'),
+    imagemin = require('gulp-imagemin'),
+    gcmq = require('gulp-group-css-media-queries'),
+    svgstore = require('gulp-svgstore'),
+    svgmin = require('gulp-svgmin');
 
 
 
@@ -15,8 +24,8 @@ FILE DESTINATIONS (RELATIVE TO ASSSETS FOLDER)
 *******************************************************************************/
 
 var target = {
-    main_sass_src : './assets/stylus/styles.styl',
-    sass_src : './assets/stylus/**/*.scss',                  // all sass files
+    main_stylus_src : './assets/stylus/styles.styl',
+    stylus_src : './assets/stylus/**/*.scss',                  // all sass files
     css_dest : './assets/css',                          // where to put minified css
     js_src : './assets/js/*.js',                        // all js files
     js_dest : './assets/js/min',                        // where to put minified js
@@ -36,7 +45,7 @@ SASS TASK
 *******************************************************************************/
 
 gulp.task('styles', function() {
-    return gulp.src(target.main_sass_src)
+    return gulp.src(target.main_stylus_src)
         .pipe(plumber())
         .pipe(stylus({
           use: koutoSwiss(),
@@ -119,7 +128,7 @@ WATCH TASK
 
 gulp.task('watch', function() {
 
-    gulp.watch(target.sass_src, ['styles']);        // Watch .scss files
+    gulp.watch(target.stylus_src, ['styles']);        // Watch .scss files
     gulp.watch(target.js_src, ['scripts']);         // Watch .js files
 
 });
